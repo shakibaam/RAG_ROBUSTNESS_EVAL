@@ -1,0 +1,54 @@
+# Secrets and local env
+.env
+.env.*
+!.env.example
+*.pem
+credentials*.json
+**/openai_api_key*
+**/google_api_key*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Caches / model downloads
+.nltk_data/
+.tiktoken_cache/
+.cache/
+**/huggingface/
+*.pt
+*.bin
+*.safetensors
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Large / private archives
+*.rar
+*.zip
+*.7z
+data.rar
+Overleaf/
+overleaf/
+bibtex/
+
+# Heavy raw MIS instance dumps (summaries/CSVs are published instead)
+**/instances/*.json
+**/stance_cache/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/

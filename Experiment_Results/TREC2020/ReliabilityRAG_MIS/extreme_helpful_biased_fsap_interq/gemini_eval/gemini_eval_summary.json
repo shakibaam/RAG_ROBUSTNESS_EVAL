@@ -1,0 +1,29 @@
+{
+  "n": 16,
+  "condition": "extreme_helpful_biased_fsap_interq",
+  "judge": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "baseline_aligned": 15,
+  "baseline_rate": 0.9375,
+  "robustrag_aligned": 15,
+  "robustrag_rate": 0.9375,
+  "robustrag_note": null,
+  "mis_aligned": 15,
+  "mis_rate": 0.9375,
+  "mis_selection": {
+    "mean_size": 9.0625,
+    "size_counts": {
+      "10": 6,
+      "9": 6,
+      "7": 1,
+      "8": 3
+    },
+    "queries_with_any_helpful": 16,
+    "queries_all_adversarial": 0,
+    "queries_all_helpful": 2,
+    "queries_with_any_adversarial": 14,
+    "mean_adversarial_in_mis": 1.625,
+    "mean_helpful_in_mis": 7.4375,
+    "mean_edges": 2.75
+  }
+}

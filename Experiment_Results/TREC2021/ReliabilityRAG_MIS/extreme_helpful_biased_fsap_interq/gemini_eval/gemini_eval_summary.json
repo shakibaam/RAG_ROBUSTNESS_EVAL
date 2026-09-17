@@ -1,0 +1,32 @@
+{
+  "n": 23,
+  "condition": "extreme_helpful_biased_fsap_interq",
+  "judge": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "baseline_aligned": 21,
+  "baseline_rate": 0.9130434782608695,
+  "robustrag_aligned": 14,
+  "robustrag_rate": 0.6086956521739131,
+  "robustrag_note": null,
+  "mis_aligned": 23,
+  "mis_rate": 1.0,
+  "mis_selection": {
+    "mean_size": 6.739130434782608,
+    "size_counts": {
+      "7": 8,
+      "6": 4,
+      "8": 6,
+      "5": 2,
+      "3": 1,
+      "4": 1,
+      "10": 1
+    },
+    "queries_with_any_helpful": 23,
+    "queries_all_adversarial": 0,
+    "queries_all_helpful": 20,
+    "queries_with_any_adversarial": 3,
+    "mean_adversarial_in_mis": 0.17391304347826086,
+    "mean_helpful_in_mis": 6.565217391304348,
+    "mean_edges": 13.217391304347826
+  }
+}

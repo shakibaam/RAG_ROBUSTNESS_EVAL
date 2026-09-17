@@ -1,0 +1,30 @@
+{
+  "n": 16,
+  "condition": "extreme_harmful_biased_liar",
+  "judge": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "baseline_aligned": 10,
+  "baseline_rate": 0.625,
+  "robustrag_aligned": 15,
+  "robustrag_rate": 0.9375,
+  "robustrag_note": null,
+  "mis_aligned": 6,
+  "mis_rate": 0.375,
+  "mis_selection": {
+    "mean_size": 7.375,
+    "size_counts": {
+      "8": 7,
+      "7": 5,
+      "5": 1,
+      "6": 2,
+      "10": 1
+    },
+    "queries_with_any_helpful": 4,
+    "queries_all_adversarial": 12,
+    "queries_all_helpful": 0,
+    "queries_with_any_adversarial": 16,
+    "mean_adversarial_in_mis": 6.875,
+    "mean_helpful_in_mis": 0.5,
+    "mean_edges": 12.5
+  }
+}

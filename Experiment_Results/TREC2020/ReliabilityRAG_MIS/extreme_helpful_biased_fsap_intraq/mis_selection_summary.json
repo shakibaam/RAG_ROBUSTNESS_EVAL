@@ -1,0 +1,492 @@
+[
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_1",
+    "trec_qid": "qid_1",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial",
+      "adversarial"
+    ],
+    "mis_size": 10,
+    "n_edges": 0,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 2,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_2",
+    "trec_qid": "qid_2",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial",
+      "adversarial"
+    ],
+    "mis_size": 10,
+    "n_edges": 0,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 2,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_4",
+    "trec_qid": "qid_4",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial"
+    ],
+    "mis_size": 9,
+    "n_edges": 8,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 1,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_6",
+    "trec_qid": "qid_6",
+    "mis_indices": [
+      0,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial",
+      "adversarial"
+    ],
+    "mis_size": 7,
+    "n_edges": 2,
+    "n_helpful_in_mis": 5,
+    "n_adversarial_in_mis": 2,
+    "idk_excluded": [
+      1,
+      5
+    ]
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_7",
+    "trec_qid": "qid_7",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful"
+    ],
+    "mis_size": 8,
+    "n_edges": 0,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 0,
+    "idk_excluded": [
+      8,
+      9
+    ]
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_8",
+    "trec_qid": "qid_8",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      7,
+      8,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial",
+      "adversarial"
+    ],
+    "mis_size": 8,
+    "n_edges": 1,
+    "n_helpful_in_mis": 6,
+    "n_adversarial_in_mis": 2,
+    "idk_excluded": [
+      6
+    ]
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_13",
+    "trec_qid": "qid_13",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful"
+    ],
+    "mis_size": 8,
+    "n_edges": 12,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 0,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_14",
+    "trec_qid": "qid_14",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial",
+      "adversarial"
+    ],
+    "mis_size": 10,
+    "n_edges": 0,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 2,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_15",
+    "trec_qid": "qid_15",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful"
+    ],
+    "mis_size": 6,
+    "n_edges": 20,
+    "n_helpful_in_mis": 6,
+    "n_adversarial_in_mis": 0,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_18",
+    "trec_qid": "qid_18",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful"
+    ],
+    "mis_size": 7,
+    "n_edges": 14,
+    "n_helpful_in_mis": 7,
+    "n_adversarial_in_mis": 0,
+    "idk_excluded": [
+      5
+    ]
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_20",
+    "trec_qid": "qid_20",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial"
+    ],
+    "mis_size": 9,
+    "n_edges": 6,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 1,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_22",
+    "trec_qid": "qid_22",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful"
+    ],
+    "mis_size": 7,
+    "n_edges": 10,
+    "n_helpful_in_mis": 7,
+    "n_adversarial_in_mis": 0,
+    "idk_excluded": [
+      6
+    ]
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_25",
+    "trec_qid": "qid_25",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial",
+      "adversarial"
+    ],
+    "mis_size": 9,
+    "n_edges": 4,
+    "n_helpful_in_mis": 7,
+    "n_adversarial_in_mis": 2,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_41",
+    "trec_qid": "qid_41",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial",
+      "adversarial"
+    ],
+    "mis_size": 9,
+    "n_edges": 0,
+    "n_helpful_in_mis": 7,
+    "n_adversarial_in_mis": 2,
+    "idk_excluded": [
+      4
+    ]
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_47",
+    "trec_qid": "qid_47",
+    "mis_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "adversarial"
+    ],
+    "mis_size": 9,
+    "n_edges": 1,
+    "n_helpful_in_mis": 8,
+    "n_adversarial_in_mis": 1,
+    "idk_excluded": []
+  },
+  {
+    "request_qid": "neutral_helpful_biased_fsap_intraq_49",
+    "trec_qid": "qid_49",
+    "mis_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "mis_doc_types": [
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful",
+      "helpful"
+    ],
+    "mis_size": 7,
+    "n_edges": 14,
+    "n_helpful_in_mis": 7,
+    "n_adversarial_in_mis": 0,
+    "idk_excluded": [
+      0
+    ]
+  }
+]

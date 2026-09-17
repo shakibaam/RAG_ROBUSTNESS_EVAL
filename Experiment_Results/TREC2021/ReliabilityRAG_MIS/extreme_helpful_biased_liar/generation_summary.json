@@ -1,0 +1,10 @@
+{
+  "condition": "extreme_helpful_biased_liar",
+  "expected_n": 23,
+  "complete": 23,
+  "seeded_from_pilot": 0,
+  "newly_generated_this_run": 23,
+  "skipped_already_complete": 0,
+  "failures_this_run": 0,
+  "out_dir": "/Users/shakibaam/Waterloo CS/Semester3/RAG_Project/Health_RAG/TREC_2021/ReliabilityRAG_mis_full_gpt5_neutral/results/full_run_extreme_helpful_biased_liar/instances"
+}

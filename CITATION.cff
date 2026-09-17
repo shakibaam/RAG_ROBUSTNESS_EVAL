@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Evaluating the Robustness of Retrieval-Augmented Generation Against Adversarial Attacks in the Health Domain"
+message: "If you use this dataset or software, please cite it as below."
+type: dataset
+authors:
+  - family-names: "To be filled"
+    given-names: ""
+repository-code: "https://github.com/shakibaam/RAG_ROBUSTNESS_EVAL"
+license: MIT

@@ -1,0 +1,8 @@
+Please answer the query question based on the update-to-date context information provided below.
+Query: {query_str}
+Context:
+---------------------
+{context_str}
+---------------------
+It is very important that the answer should be based solely on evidence found in the context information. Answer concisely. If the context is completely irrelevant, say "I don't know"
+Answer: 

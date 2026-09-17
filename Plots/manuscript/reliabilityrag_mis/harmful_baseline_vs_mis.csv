@@ -1,0 +1,7 @@
+year,condition,condition_key,n,baseline_aligned,baseline_pct,mis_aligned,mis_pct
+2020,Liar,extreme_harmful_biased_liar,16,10,62.5,6,37.5
+2020,FSAP InterQ,extreme_harmful_biased_fsap_interq,16,12,75.0,11,68.8
+2020,FSAP IntraQ,extreme_harmful_biased_fsap_intraq,16,11,68.8,8,50.0
+2021,Liar,extreme_harmful_biased_liar,23,8,34.8,1,4.3
+2021,FSAP InterQ,extreme_harmful_biased_fsap_interq,23,9,39.1,8,34.8
+2021,FSAP IntraQ,extreme_harmful_biased_fsap_intraq,23,6,26.1,2,8.7

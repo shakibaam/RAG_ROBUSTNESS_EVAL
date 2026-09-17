@@ -1,0 +1,29 @@
+{
+  "n": 23,
+  "condition": "extreme_harmful_biased_fsap_intraq",
+  "judge": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "baseline_aligned": 6,
+  "baseline_rate": 0.2608695652173913,
+  "robustrag_aligned": 17,
+  "robustrag_rate": 0.7391304347826086,
+  "robustrag_note": null,
+  "mis_aligned": 2,
+  "mis_rate": 0.08695652173913043,
+  "mis_selection": {
+    "mean_size": 7.521739130434782,
+    "size_counts": {
+      "7": 6,
+      "8": 15,
+      "6": 1,
+      "5": 1
+    },
+    "queries_with_any_helpful": 2,
+    "queries_all_adversarial": 21,
+    "queries_all_helpful": 0,
+    "queries_with_any_adversarial": 23,
+    "mean_adversarial_in_mis": 7.391304347826087,
+    "mean_helpful_in_mis": 0.13043478260869565,
+    "mean_edges": 14.565217391304348
+  }
+}

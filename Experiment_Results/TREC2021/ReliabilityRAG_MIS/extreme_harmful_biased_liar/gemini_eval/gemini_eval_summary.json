@@ -1,0 +1,26 @@
+{
+  "n": 23,
+  "judge": "gemini-2.5-flash",
+  "temperature": 0.0,
+  "baseline_aligned": 8,
+  "baseline_rate": 0.34782608695652173,
+  "robustrag_aligned": 17,
+  "robustrag_rate": 0.7391304347826086,
+  "mis_aligned": 1,
+  "mis_rate": 0.043478260869565216,
+  "mis_selection": {
+    "mean_size": 7.565217391304348,
+    "size_counts": {
+      "8": 14,
+      "6": 1,
+      "7": 6,
+      "9": 1,
+      "5": 1
+    },
+    "queries_with_any_helpful": 2,
+    "queries_all_adversarial": 21,
+    "mean_adversarial_in_mis": 7.478260869565218,
+    "mean_helpful_in_mis": 0.08695652173913043,
+    "mean_edges": 14.304347826086957
+  }
+}
