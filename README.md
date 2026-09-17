@@ -9,7 +9,7 @@ This repository is intended for **paper reproduction**: released CSVs/summaries,
 | Path | Contents |
 |------|----------|
 | [`Prompts/`](Prompts/) | RAG / non-RAG generation templates, stance judge prompt, MIS isolate & final prompts |
-| [`Code/`](Code/) | Evaluation helpers and ReliabilityRAG MIS runners (relative paths, env-based API keys) |
+| [`Code/`](Code/) | Ragnarok generation backend, evaluation helpers, and ReliabilityRAG MIS runners |
 | [`Experiment_Results/`](Experiment_Results/) | Stance-labeled CSVs for single-doc, paired, pooling, extreme, and MIS summaries |
 | [`Tables/`](Tables/) | Compact manuscript-facing tables (e.g., harmful Baseline vs MIS) |
 | [`Plots/`](Plots/) | Figures used in analysis / manuscript |
@@ -21,6 +21,8 @@ This repository is intended for **paper reproduction**: released CSVs/summaries,
 - Raw per-query MIS instance JSON dumps, API keys, and large private corpora are excluded (see `.gitignore`).
 
 ## Experimental settings (overview)
+
+Generation uses the **Ragnarok**-style RAG stack in [`Code/ragnarok/`](Code/ragnarok/). Released settings include:
 
 1. **Single-document** — one retrieved/adversarial/helpful document as context.
 2. **Paired-document** — helpful + adversarial pairs.
@@ -38,10 +40,8 @@ RAG_ROBUSTNESS_EVAL/
   .gitignore
   Prompts/
   Code/
+    ragnarok/             # Ragnarok-style RAG generation backend
     evaluation/           # stance helpers, aggregation, paired stats utilities
-    single_document/
-    paired_document/
-    pooling/
     reliabilityrag_mis/   # MIS run + Gemini eval for TREC 2020/2021
   Experiment_Results/
     TREC2020/ … TREC2021/
