@@ -25,8 +25,8 @@ This repository is intended for **paper reproduction**: released CSVs/summaries,
 Generation uses the **Ragnarok**-style RAG stack in [`Code/ragnarok/`](Code/ragnarok/). Released settings include:
 
 1. **Single-document** — one retrieved/adversarial/helpful document as context.
-2. **Paired-document** — helpful + adversarial pairs.
-3. **Pooling** — biased-controlled vs realistic / extreme pools (e.g., 8:2 harmful-biased).
+2. **Passage-based** — paired helpful + adversarial passages.
+3. **Biased pool** — retrieval pools skewed toward harmful or helpful evidence (e.g., 8:2).
 4. **Mitigation** — **ReliabilityRAG MIS** (isolate → DeBERTa NLI conflict graph → exact maximum independent set → final answer on selected docs).
 
 Each generation setting is typically evaluated under **consistent / inconsistent / neutral** query tones. Stance labels use Gemini and/or GPT-4o-mini judges (`helpful` / `unhelpful`).
@@ -54,10 +54,10 @@ RAG_ROBUSTNESS_EVAL/
 
 Under `Experiment_Results/TREC2020|TREC2021/`:
 
-- `Single_Document_<Model>/` with `gemini2.0flash/` and `gpt4omini/`
-- `Paired_Document_GPT_4.1/`
-- `Biased_Controlled_Pooling_GPT_4.1/`, `Realistic_Pooling_GPT_4.1/`
-- `Extreme_Pooling_GPT_5/` — summary CSVs for extreme 8:2 pools
+- `Single_Document_<Model>/` — one-document settings (`gemini2.0flash/`, `gpt4omini/`, …)
+- `Passage_Based_<Model>/` — two-passage (helpful ↔ adversarial) settings
+- `Biased_Pool_<Model>/` — biased retrieval pools (e.g., 8:2 harmful/helpful)
+- Models included for passage-based and biased pool: **GPT_4.1**, **GPT_5**, **Phi_4**, **Llama-3.3-70B-Instruct**, **Qwen3-30B-A3B-Instruct-2507**
 - `ReliabilityRAG_MIS/` — comparison CSVs and summaries (Baseline vs MIS)
 
 ### CSV columns (generation + stance)
