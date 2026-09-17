@@ -3,7 +3,7 @@ title: "Evaluating the Robustness of Retrieval-Augmented Generation Against Adve
 message: "If you use this dataset or software, please cite it as below."
 type: dataset
 authors:
-  - family-names: "To be filled"
-    given-names: ""
-repository-code: "https://github.com/shakibaam/RAG_ROBUSTNESS_EVAL"
+  - family-names: "Anonymous"
+    given-names: "Authors"
+# repository-code omitted for anonymized release; fill in after acceptance
 license: MIT

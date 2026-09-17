@@ -67,7 +67,7 @@ Typical columns include: `qid`, `tone`, `setting`, `query`, `description`, `llm_
 ## Quick start
 
 ```bash
-git clone https://github.com/shakibaam/RAG_ROBUSTNESS_EVAL.git
+git clone <REPO_URL> RAG_ROBUSTNESS_EVAL
 cd RAG_ROBUSTNESS_EVAL
 python -m venv .venv && source .venv/bin/activate   # optional
 pip install -r requirements.txt
