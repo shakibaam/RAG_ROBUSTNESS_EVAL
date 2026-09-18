@@ -1,9 +1,0 @@
-cff-version: 1.2.0
-title: "Evaluating the Robustness of Retrieval-Augmented Generation Against Adversarial Attacks in the Health Domain"
-message: "If you use this dataset or software, please cite it as below."
-type: dataset
-authors:
-  - family-names: "Anonymous"
-    given-names: "Authors"
-# repository-code omitted for anonymized release; fill in after acceptance
-license: MIT

@@ -7,11 +7,15 @@ Organized by TREC year (`TREC2020/`, `TREC2021/`) and setting.
 | Folder prefix | Meaning |
 |---------------|---------|
 | `Single_Document_<Model>/` | One document as context |
-| `Passage_Based_<Model>/` | Two passages (helpful ↔ adversarial) |
+| `Natural_Pool_<Model>/` | Realistic / passage-based pooling |
+| `Passage_Based_<Model>/` | Paired documents (helpful ↔ adversarial) |
 | `Biased_Pool_<Model>/` | Biased retrieval pools (harmful-biased / helpful-biased) |
-| `ReliabilityRAG_MIS/` | Manuscript mitigation (Baseline vs MIS summaries) |
+| `ReliabilityRAG_MIS/` | Mitigation summaries (Baseline vs MIS) |
+| `Check_Covid/` | Check-COVID single-document + paired-document results |
 
-### Models for `Passage_Based_*` and `Biased_Pool_*`
+See [`Check_Covid/README.md`](Check_Covid/README.md) for the Check-COVID layout (from [A-Structured-Evaluation-of-LLM-Verification-Robustness](https://github.com/shakibaam/A-Structured-Evaluation-of-LLM-Verification-Robustness)).
+
+### Models for `Natural_Pool_*`, `Passage_Based_*`, and `Biased_Pool_*`
 
 - `GPT_4.1`
 - `GPT_5`
@@ -21,12 +25,13 @@ Organized by TREC year (`TREC2020/`, `TREC2021/`) and setting.
 
 ### Judges (subfolders)
 
-- `gemini2.0flash/` / `gemini2.5flash/` — Gemini stance labels
-- `gpt4omini/` — GPT-4o-mini stance labels
+- `gemini2.0flash/` — Gemini 2.0 Flash
+- `gemini2.5flash/` — Gemini 2.5 Flash
+- `gpt4omini/` — GPT-4o-mini
 
 (Availability of a given judge depends on when that model was evaluated.)
 
-## Mitigation (manuscript)
+## Mitigation
 
 `TREC2020|TREC2021/ReliabilityRAG_MIS/<condition>/gemini_eval/mis_vs_baseline_comparison.csv`
 

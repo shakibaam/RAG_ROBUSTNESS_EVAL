@@ -1,8 +1,8 @@
 # Evaluating the Robustness of Retrieval-Augmented Generation Against Adversarial Attacks in the Health Domain
 
-Curated experimental code, prompts, results, and plots for evaluating how retrieval-augmented generation (RAG) systems behave under adversarial and misleading health information on **TREC Misinformation 2020** and **2021**.
+Curated experimental code, prompts, results, tables, and figures for evaluating how retrieval-augmented generation (RAG) systems behave under adversarial and misleading health information on **TREC Misinformation 2020/2021**, plus released **Check-COVID** verification results.
 
-This repository is intended for **paper reproduction**: released CSVs/summaries, manuscript figures, prompt templates, evaluation utilities, and the **ReliabilityRAG (MIS)** mitigation pipeline used in the final manuscript.
+This repository is intended for **paper reproduction**: released CSVs/summaries, paper figures, prompt templates, evaluation utilities, and the **ReliabilityRAG (MIS)** mitigation pipeline.
 
 ## What is included
 
@@ -10,26 +10,30 @@ This repository is intended for **paper reproduction**: released CSVs/summaries,
 |------|----------|
 | [`Prompts/`](Prompts/) | RAG / non-RAG generation templates, stance judge prompt, MIS isolate & final prompts |
 | [`Code/`](Code/) | Ragnarok generation backend, evaluation helpers, and ReliabilityRAG MIS runners |
-| [`Experiment_Results/`](Experiment_Results/) | Stance-labeled CSVs for single-doc, paired, pooling, extreme, and MIS summaries |
-| [`Tables/`](Tables/) | Compact manuscript-facing tables (e.g., harmful Baseline vs MIS) |
-| [`Plots/`](Plots/) | Figures used in analysis / manuscript |
+| [`Experiment_Results/`](Experiment_Results/) | Stance-labeled CSVs for TREC + Check-COVID settings |
+| [`Tables/`](Tables/) | Compact paper tables (e.g., harmful Baseline vs MIS) |
+| [`Plots/`](Plots/) | Released figures (Pools / Paired / Single-Document), organized by judge |
 | [`Data/prompts_trec/`](Data/prompts_trec/) | TREC query/prompt metadata CSVs |
 
 ## What is not in the main reproduction pipeline
 
-- **RobustRAG** KeywordAgg experiments are **not** required to reproduce the manuscript mitigation results. The reported defense is **ReliabilityRAG MIS**.
+- **RobustRAG** KeywordAgg experiments are **not** required to reproduce the mitigation results. The reported defense is **ReliabilityRAG MIS**.
+- Plot-generation scripts are **not** included; figures under [`Plots/`](Plots/) are released as images.
 - Raw per-query MIS instance JSON dumps, API keys, and large private corpora are excluded (see `.gitignore`).
 
 ## Experimental settings (overview)
 
 Generation uses the **Ragnarok**-style RAG stack in [`Code/ragnarok/`](Code/ragnarok/). Released settings include:
 
-1. **Single-document** — one retrieved/adversarial/helpful document as context.
-2. **Passage-based** — paired helpful + adversarial passages.
-3. **Biased pool** — retrieval pools skewed toward harmful or helpful evidence (e.g., 8:2).
-4. **Mitigation** — **ReliabilityRAG MIS** (isolate → DeBERTa NLI conflict graph → exact maximum independent set → final answer on selected docs).
+1. **Single-document** (`Single_Document_<Model>/`) — one retrieved/adversarial/helpful document as context.
+2. **Paired documents** (`Passage_Based_<Model>/`) — helpful + adversarial passages (helpful-first vs helpful-second).
+3. **Natural / passage-based pooling** (`Natural_Pool_<Model>/`) — realistic top-k retrieval pools.
+4. **Biased pool** (`Biased_Pool_<Model>/`) — retrieval pools skewed toward harmful or helpful evidence (e.g., 8:2).
+5. **Mitigation** — **ReliabilityRAG MIS** (isolate → DeBERTa NLI conflict graph → exact maximum independent set → final answer on selected docs).
 
-Each generation setting is typically evaluated under **consistent / inconsistent / neutral** query tones. Stance labels use Gemini and/or GPT-4o-mini judges (`helpful` / `unhelpful`).
+**Additional benchmark (Check-COVID):** released verification results under [`Experiment_Results/Check_Covid/`](Experiment_Results/Check_Covid/) (single-document + paired-document). Full code for that benchmark lives in [A-Structured-Evaluation-of-LLM-Verification-Robustness](https://github.com/shakibaam/A-Structured-Evaluation-of-LLM-Verification-Robustness).
+
+Each TREC generation setting is typically evaluated under **consistent / inconsistent / neutral** query tones. Stance labels use Gemini and/or GPT-4o-mini judges (`helpful` / `unhelpful`).
 
 ## Repository layout
 
@@ -41,28 +45,61 @@ RAG_ROBUSTNESS_EVAL/
   Prompts/
   Code/
     ragnarok/             # Ragnarok-style RAG generation backend
-    evaluation/           # stance helpers, aggregation, paired stats utilities
+    evaluation/           # stance helpers, optional paired stats
     reliabilityrag_mis/   # MIS run + Gemini eval for TREC 2020/2021
   Experiment_Results/
     TREC2020/ … TREC2021/
+    Check_Covid/          # Check-COVID single + paired results
   Tables/
   Plots/
+    gemini2.0flash/
+    gemini2.5flash/
+    gpt4omini/
   Data/prompts_trec/
 ```
 
 ### Experiment results layout
 
-Under `Experiment_Results/TREC2020|TREC2021/`:
+Under `Experiment_Results/TREC2020|TREC2021/` (see also [`Experiment_Results/README.md`](Experiment_Results/README.md)):
 
-- `Single_Document_<Model>/` — one-document settings (`gemini2.0flash/`, `gpt4omini/`, …)
-- `Passage_Based_<Model>/` — two-passage (helpful ↔ adversarial) settings
-- `Biased_Pool_<Model>/` — biased retrieval pools (e.g., 8:2 harmful/helpful)
-- Models included for passage-based and biased pool: **GPT_4.1**, **GPT_5**, **Phi_4**, **Llama-3.3-70B-Instruct**, **Qwen3-30B-A3B-Instruct-2507**
-- `ReliabilityRAG_MIS/` — comparison CSVs and summaries (Baseline vs MIS)
+| Folder prefix | Meaning |
+|---------------|---------|
+| `Single_Document_<Model>/` | One-document settings |
+| `Passage_Based_<Model>/` | Paired helpful ↔ adversarial passages |
+| `Natural_Pool_<Model>/` | Realistic / passage-based pooling |
+| `Biased_Pool_<Model>/` | Harmful-biased / helpful-biased pools |
+| `ReliabilityRAG_MIS/` | Baseline vs MIS comparison CSVs |
+| `Check_Covid/` | Check-COVID single-document + paired-document results |
+
+**Models** for TREC `Passage_Based_*`, `Natural_Pool_*`, and `Biased_Pool_*`:
+
+- `GPT_4.1`, `GPT_5`, `Phi_4`, `Llama-3.3-70B-Instruct`, `Qwen3-30B-A3B-Instruct-2507`
+
+**Models** for Check-COVID (`Experiment_Results/Check_Covid/`):
+
+- `deepseek`, `GPT4.1`, `GPT5`, `llama3.1`, `phi4`
+
+**Judges** (TREC subfolders under each model setting; availability varies by model):
+
+- `gemini2.0flash/` — Gemini 2.0 Flash (e.g., GPT-4.1 pools/paired; Single-Document)
+- `gemini2.5flash/` — Gemini 2.5 Flash (other models’ pools/paired)
+- `gpt4omini/` — GPT-4o-mini
+
+### Plots layout
+
+Under `Plots/` (see also [`Plots/README.md`](Plots/README.md)), organized by **judge**, then setting:
+
+| Folder | Contents |
+|--------|----------|
+| `Pools/` | Merged natural-pool + biased-pool figures (`bias_pools_<Model>_2020_2021.png`) |
+| `Paired/` | Paired-document figures (`paired_<Model>_2020_2021.png`) |
+| `Single-Document/` | Single-document stacked figures |
+
+Judge folders: `gemini2.0flash/`, `gemini2.5flash/`, `gpt4omini/`.
 
 ### CSV columns (generation + stance)
 
-Typical columns include: `qid`, `tone`, `setting`, `query`, `description`, `llm_response`, `gt_stance`, `references`, `topic_id`, `doc_name`, `attack_type`, `predicted_stance_<evaluator>`.
+Typical columns include: `qid`, `tone`, `setting`, `query`, `description`, `llm_response`, `gt_stance`, `references`, `topic_id`, `doc_name`, `attack_type`, `pair_setting`, `predicted_stance` / `predicted_stance_gemini`.
 
 ## Quick start
 
@@ -74,7 +111,7 @@ pip install -r requirements.txt
 cp .env.example .env   # set GOOGLE_API_KEY / OPENAI_API_KEY / OPENROUTER_API_KEY as needed
 ```
 
-### Reproduce manuscript tables from released artifacts
+### Reproduce tables from released artifacts
 
 Harmful-biased Baseline vs ReliabilityRAG MIS rates are in:
 
@@ -96,4 +133,32 @@ If you use this repository, please cite:
 
 ## Acknowledgements
 
-ReliabilityRAG builds on ideas from the ReliabilityRAG / RobustRAG literature. This health-domain evaluation adapts MIS for TREC misinformation pools; see `Code/reliabilityrag_mis/` for the paper pipeline used here.
+The **mitigation** strategy is based on **ReliabilityRAG**:
+
+> ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search
+
+```bibtex
+@article{shen2026reliabilityrag,
+  title={Reliabilityrag: Effective and provably robust defense for rag-based web-search},
+  author={Shen, Zeyu and Imana, Basileal and Wu, Tong and Xiang, Chong and Mittal, Prateek and Korolova, Aleksandra},
+  journal={Advances in Neural Information Processing Systems},
+  volume={38},
+  pages={45662--45702},
+  year={2026}
+}
+```
+
+Generation builds on **Ragnarök**:
+
+> Ragnarök: A reusable RAG framework and baselines for TREC 2024 retrieval-augmented generation track
+
+```bibtex
+@inproceedings{Pradeep:2025:RRF,
+  title={Ragnar{\"o}k: A reusable RAG framework and baselines for TREC 2024 retrieval-augmented generation track},
+  author={Pradeep, Ronak and Thakur, Nandan and Sharifymoghaddam, Sahel and Zhang, Eric and Nguyen, Ryan and Campos, Daniel and Craswell, Nick and Lin, Jimmy},
+  booktitle={European Conference on Information Retrieval},
+  pages={132--148},
+  year={2025},
+  organization={Springer}
+}
+```

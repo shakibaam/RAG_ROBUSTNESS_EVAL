@@ -25,7 +25,8 @@ python scripts/run_my_rag.py --requests /path/to/requests.jsonl --run-id demo
 Released stance-labeled CSVs (no need to regenerate for table reproduction):
 
 - `Experiment_Results/TREC2020|TREC2021/Single_Document_*`
-- `Experiment_Results/TREC2020|TREC2021/Passage_Based_*`
+- `Experiment_Results/TREC2020|TREC2021/Passage_Based_*` (paired documents)
+- `Experiment_Results/TREC2020|TREC2021/Natural_Pool_*` (realistic pooling)
 - `Experiment_Results/TREC2020|TREC2021/Biased_Pool_*`
 
-For the manuscript **mitigation** defense, see [`../reliabilityrag_mis/`](../reliabilityrag_mis/).
+For the **mitigation** defense, see [`../reliabilityrag_mis/`](../reliabilityrag_mis/).
