@@ -1,17 +1,30 @@
 # Plots
 
-## Existing evaluator-organized figures
+## Judges
 
-- `gemini2.0flash/` — Single-Document, Paired-Document, Realistic_Vs_Biased_Controlled
-- `gpt4omini/` — same layout for GPT-4o-mini stance labels
+- `gemini/` — stance labels from Gemini (2.0 or 2.5 Flash, depending on the model run)
+- `gpt4omini/` — stance labels from GPT-4o-mini
+
+## Settings
+
+| Folder | Contents |
+|--------|----------|
+| `Biased_Pool/` | Helpful-biased vs harmful-biased alignment by attack (TREC 2020 & 2021) |
+| `Passage_Based/` | Helpful-first vs helpful-second passage pairs by attack |
+| `Single-Document/` | Legacy single-document stacked plots (existing) |
+
+### Models (Biased_Pool + Passage_Based)
+
+`GPT_4.1`, `GPT_5`, `Phi_4`, `Llama-3.3-70B-Instruct`, `Qwen3-30B-A3B-Instruct-2507`
+
+Filename pattern: `{biased_pool|passage_based}_<Model>_2020_2021.png`
+
+Regenerate from curated CSVs:
+
+```bash
+python Code/evaluation/plot_biased_and_passage.py
+```
 
 ## Manuscript set
 
-`manuscript/` holds a curated copy of key figures used for paper-style reporting:
-
-- `single_document/` — stacked stance alignment across models
-- `paired_document/` — paired-document summary
-- `pooling/` — biased / extreme pool figures
-- `reliabilityrag_mis/` — companion table for Baseline vs MIS (harmful)
-
-Duplicate experimental plot variants were left out of `manuscript/`.
+`manuscript/` holds additional paper-facing figure copies (pooling / paired / single-doc stacks).
