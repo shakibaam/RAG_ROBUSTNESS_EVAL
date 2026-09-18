@@ -1,6 +1,6 @@
 # Evaluating the Robustness of Retrieval-Augmented Generation Against Adversarial Attacks in the Health Domain
 
-Curated experimental code, prompts, results, tables, and figures for evaluating how retrieval-augmented generation (RAG) systems behave under adversarial and misleading health information on **TREC Misinformation 2020/2021**, plus released **Check-COVID** verification results.
+Codes, prompts, results, and figures for evaluating how retrieval-augmented generation (RAG) systems behave under adversarial and misleading health information on **TREC Misinformation 2020/2021**, plus released **Check-COVID** verification results.
 
 This repository is intended for **paper reproduction**: released CSVs/summaries, paper figures, prompt templates, evaluation utilities, and the **ReliabilityRAG (MIS)** mitigation pipeline.
 
@@ -11,15 +11,8 @@ This repository is intended for **paper reproduction**: released CSVs/summaries,
 | [`Prompts/`](Prompts/) | RAG / non-RAG generation templates, stance judge prompt, MIS isolate & final prompts |
 | [`Code/`](Code/) | Ragnarok generation backend, evaluation helpers, and ReliabilityRAG MIS runners |
 | [`Experiment_Results/`](Experiment_Results/) | Stance-labeled CSVs for TREC + Check-COVID settings |
-| [`Tables/`](Tables/) | Compact paper tables (e.g., harmful Baseline vs MIS) |
 | [`Plots/`](Plots/) | Released figures (Pools / Paired / Single-Document), organized by judge |
 | [`Data/prompts_trec/`](Data/prompts_trec/) | TREC query/prompt metadata CSVs |
-
-## What is not in the main reproduction pipeline
-
-- **RobustRAG** KeywordAgg experiments are **not** required to reproduce the mitigation results. The reported defense is **ReliabilityRAG MIS**.
-- Plot-generation scripts are **not** included; figures under [`Plots/`](Plots/) are released as images.
-- Raw per-query MIS instance JSON dumps, API keys, and large private corpora are excluded (see `.gitignore`).
 
 ## Experimental settings (overview)
 
@@ -50,7 +43,6 @@ RAG_ROBUSTNESS_EVAL/
   Experiment_Results/
     TREC2020/ … TREC2021/
     Check_Covid/          # Check-COVID single + paired results
-  Tables/
   Plots/
     gemini2.0flash/
     gemini2.5flash/
@@ -70,6 +62,10 @@ Under `Experiment_Results/TREC2020|TREC2021/` (see also [`Experiment_Results/REA
 | `Biased_Pool_<Model>/` | Harmful-biased / helpful-biased pools |
 | `ReliabilityRAG_MIS/` | Baseline vs MIS comparison CSVs |
 | `Check_Covid/` | Check-COVID single-document + paired-document results |
+
+**Models** for TREC `Single_Document_*`:
+
+- `GPT_4.1`, `GPT_5`, `Phi_4`, `Llama-3-8B-Instruct`, `DeepSeek-R1-Distill-Qwen-32B`, `Claudi_3.5_Haiku`
 
 **Models** for TREC `Passage_Based_*`, `Natural_Pool_*`, and `Biased_Pool_*`:
 
@@ -111,17 +107,16 @@ pip install -r requirements.txt
 cp .env.example .env   # set GOOGLE_API_KEY / OPENAI_API_KEY / OPENROUTER_API_KEY as needed
 ```
 
-### Reproduce tables from released artifacts
+### ReliabilityRAG MIS results
 
-Harmful-biased Baseline vs ReliabilityRAG MIS rates are in:
+Harmful-biased Baseline vs ReliabilityRAG MIS comparison CSVs are in:
 
-- [`Tables/harmful_baseline_vs_mis.csv`](Tables/harmful_baseline_vs_mis.csv)
 - [`Experiment_Results/TREC2020/ReliabilityRAG_MIS/`](Experiment_Results/TREC2020/ReliabilityRAG_MIS/)
 - [`Experiment_Results/TREC2021/ReliabilityRAG_MIS/`](Experiment_Results/TREC2021/ReliabilityRAG_MIS/)
 
 ### Run ReliabilityRAG MIS (optional regeneration)
 
-See [`Code/reliabilityrag_mis/README.md`](Code/reliabilityrag_mis/README.md). You need Extreme_Pool inputs and API access; released comparison CSVs are sufficient for table reproduction without re-running generation.
+See [`Code/reliabilityrag_mis/README.md`](Code/reliabilityrag_mis/README.md). You need Extreme_Pool inputs and API access; released comparison CSVs are sufficient without re-running generation.
 
 ## Citation
 

@@ -22,7 +22,7 @@ cd Code/ragnarok
 python scripts/run_my_rag.py --requests /path/to/requests.jsonl --run-id demo
 ```
 
-Released stance-labeled CSVs (no need to regenerate for table reproduction):
+Released stance-labeled CSVs (no need to regenerate for most analyses):
 
 - `Experiment_Results/TREC2020|TREC2021/Single_Document_*`
 - `Experiment_Results/TREC2020|TREC2021/Passage_Based_*` (paired documents)

@@ -15,6 +15,15 @@ Organized by TREC year (`TREC2020/`, `TREC2021/`) and setting.
 
 See [`Check_Covid/README.md`](Check_Covid/README.md) for the Check-COVID layout (from [A-Structured-Evaluation-of-LLM-Verification-Robustness](https://github.com/shakibaam/A-Structured-Evaluation-of-LLM-Verification-Robustness)).
 
+### Models for `Single_Document_*`
+
+- `GPT_4.1`
+- `GPT_5`
+- `Phi_4`
+- `Llama-3-8B-Instruct`
+- `DeepSeek-R1-Distill-Qwen-32B`
+- `Claudi_3.5_Haiku`
+
 ### Models for `Natural_Pool_*`, `Passage_Based_*`, and `Biased_Pool_*`
 
 - `GPT_4.1`
@@ -22,6 +31,10 @@ See [`Check_Covid/README.md`](Check_Covid/README.md) for the Check-COVID layout 
 - `Phi_4`
 - `Llama-3.3-70B-Instruct`
 - `Qwen3-30B-A3B-Instruct-2507`
+
+### Models for Check-COVID
+
+- `deepseek`, `GPT4.1`, `GPT5`, `llama3.1`, `phi4`
 
 ### Judges (subfolders)
 
@@ -34,5 +47,3 @@ See [`Check_Covid/README.md`](Check_Covid/README.md) for the Check-COVID layout 
 ## Mitigation
 
 `TREC2020|TREC2021/ReliabilityRAG_MIS/<condition>/gemini_eval/mis_vs_baseline_comparison.csv`
-
-See also `../Tables/harmful_baseline_vs_mis.csv`.

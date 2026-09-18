@@ -9,13 +9,12 @@ Exact Maximum Independent Set (MIS) defense adapted for TREC health misinformati
 3. **MIS** — exact maximum independent set over non-IDK vertices (lexicographic tie-break).
 4. **Final answer** — generate on MIS-selected documents with IEEE citation prompt.
 
-## Reproduce tables without regeneration
+## Released MIS results
 
-Use released CSVs under:
+Use comparison CSVs under:
 
 - `Experiment_Results/TREC2020/ReliabilityRAG_MIS/`
 - `Experiment_Results/TREC2021/ReliabilityRAG_MIS/`
-- `Tables/harmful_baseline_vs_mis.csv`
 
 ## Optional: regenerate
 
